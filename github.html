@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github visible btn</title>
+</head>
+<body>
+    <h1 id ="btn-h1">My info</h1>
+    <input id="textid" type="text" placeholder="please type delete">
+    <button id ="btn-delete" disabled>DELETE</button>
+    
+ 
+    <script>
+        //hidden to visible button when keyup 
+        document.getElementById("textid").addEventListener("keyup",function(event){
+            const visibleBtn = event.target.value;
+            // console.log(visibleBtn);
+            const deletbtn = document.getElementById("btn-delete");
+            if(visibleBtn === 'DELETE'){
+                deletbtn.removeAttribute('disabled');
+            }
+            else{
+                deletbtn.setAttribute('disabled',true);
+            }
+        });
+
+        document.getElementById("btn-delete").addEventListener('click',function(){
+            const btnSecret = document.getElementById("btn-h1");
+            btnSecret.style.display= 'none';
+        });
+    </script>
+</body>
+</html>

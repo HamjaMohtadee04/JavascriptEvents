@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM SUMMARY</title>
+</head>
+<body>
+    <h1> Final DOM summary</h1>
+    <p id="defaulttextstep">default text</p>
+    <input type="text" id="inputField">
+    <button id="btn-update">update</button>
+    <br>
+    <br>
+   <h3 id="handler">event handler</h3>
+    <button onclick="btnOnclikck()">Handle on click btn</button>
+    <button id="eventlistener">event handler</button>
+
+
+
+
+
+</body>
+<script>
+    function btnOnclikck(){
+    const evnetHandler = document.getElementById("handler");
+    evnetHandler.innerText ="handling from eventhandler";
+     }
+     document.getElementById("eventlistener").addEventListener("click", function(){
+        const eventHandler = document.getElementById("handler");
+        eventHandler.innerText ="handling from function";
+     });
+
+     document.getElementById("btn-update").addEventListener("click", function(){
+        const inputField = document.getElementById("inputField");
+        const inputText = inputField.value;
+
+        const  p  = document.getElementById("defaulttextstep");
+        p.innerText = inputText;
+        inputField.value = '';
+     });
+
+
+</script>
+</html>
